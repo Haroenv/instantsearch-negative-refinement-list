@@ -27,8 +27,6 @@ export type NegativeRefinementListRenderState = {
   refine(value: string): void;
 };
 
-export type NegativeRefinementListRendererOptions = NegativeRefinementListRenderState;
-
 type NegativeRefinementListWidgetOptions = {
   renderState: NegativeRefinementListRenderState;
   indexRenderState: {
@@ -47,16 +45,17 @@ type NegativeRefinementListWidgetOptions = {
  * Connector type, constructed from the Renderer and Connector parameters
  */
 export type NegativeRefinementListConnector = Connector<
-  NegativeRefinementListWidgetOptions,
-  NegativeRefinementListConnectorParams,
-  'haroen.negativeRefinementList'
+  NegativeRefinementListWidgetOptions & {
+    $$type: 'haroen.negativeRefinementList';
+  },
+  NegativeRefinementListConnectorParams
 >;
 
 /*
  * Renderer type, constructed from the Renderer and Connector parameters
  */
 export type NegativeRefinementListRendererCreator = RendererCreator<
-  NegativeRefinementListRendererOptions,
+  NegativeRefinementListRenderState,
   NegativeRefinementListConnectorParams,
   NegativeRefinementListWidgetParams
 >;
@@ -65,9 +64,10 @@ export type NegativeRefinementListRendererCreator = RendererCreator<
  * Widget type, constructed from the Renderer, Connector and Widget parameters
  */
 export type NegativeRefinementListWidgetCreator = WidgetFactory<
-  NegativeRefinementListWidgetOptions,
+  NegativeRefinementListWidgetOptions & {
+    $$type: 'haroen.negativeRefinementList';
+    $$widgetType: 'haroen.negativeRefinementList';
+  },
   NegativeRefinementListConnectorParams,
-  NegativeRefinementListWidgetParams,
-  'haroen.negativeRefinementList',
-  'haroen.negativeRefinementList'
+  NegativeRefinementListWidgetParams
 >;

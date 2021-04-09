@@ -71,6 +71,7 @@ export const connectNegativeRefinementList: NegativeRefinementListConnector = fu
        * See `getWidgetUiState` documentation https://www.algolia.com/doc/
        */
       getWidgetUiState(uiState, { searchParameters }) {
+
         return {
           ...uiState,
           negativeRefinementList: {
