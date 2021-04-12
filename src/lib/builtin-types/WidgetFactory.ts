@@ -1,7 +1,7 @@
-import { Widget, WidgetOptions } from './widget';
+import { Widget, WidgetDescription } from './widget';
 
 export type WidgetFactory<
-  TWidgetOptions extends WidgetOptions,
+  TWidgetDescription extends WidgetDescription,
   TConnectorParams,
   TWidgetParams
 > = (
@@ -10,7 +10,7 @@ export type WidgetFactory<
    */
   widgetParams: TWidgetParams & TConnectorParams
 ) => Widget<
-  TWidgetOptions & {
+  TWidgetDescription & {
     widgetParams: TConnectorParams;
   }
 >;

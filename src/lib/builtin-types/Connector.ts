@@ -1,15 +1,15 @@
 import { Renderer, Unmounter } from 'instantsearch.js';
-import { Widget, WidgetOptions } from './Widget';
+import { Widget, WidgetDescription } from './Widget';
 
 export type Connector<
-  TWidgetOptions extends WidgetOptions,
+  TWidgetDescription extends WidgetDescription,
   TConnectorParams
 > = <TWidgetParams>(
   /**
    * The render function.
    */
   renderFn: Renderer<
-    TWidgetOptions['renderState'],
+    TWidgetDescription['renderState'],
     TConnectorParams & TWidgetParams
   >,
   /**
@@ -19,7 +19,7 @@ export type Connector<
 ) => (
   widgetParams: TConnectorParams & TWidgetParams
 ) => Widget<
-  TWidgetOptions & {
+  TWidgetDescription & {
     widgetParams: typeof widgetParams;
   }
 >;

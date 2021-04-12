@@ -28,7 +28,7 @@ export const negativeRefinementList: NegativeRefinementListWidgetCreator = funct
   };
 
   return {
-    $$widgetType: 'haroen.negativeRefinementList',
     ...createWidget(connectorParams),
+    $$widgetType: 'haroen.negativeRefinementList',
   };
 };
