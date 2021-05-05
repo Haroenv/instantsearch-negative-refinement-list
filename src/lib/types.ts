@@ -1,10 +1,5 @@
-import { SearchResults } from 'algoliasearch-helper';
-
-import type {
-  Connector,
-  WidgetFactory,
-  RendererCreator,
-} from './builtin-types';
+import type { SearchResults } from 'algoliasearch-helper';
+import type { Renderer, Connector, WidgetFactory } from 'instantsearch.js';
 
 /*
  * Parameters send only to the widget creator function
@@ -29,7 +24,6 @@ export type NegativeRefinementListRenderState = {
 
 type NegativeRefinementListWidgetDescription = {
   $$type: 'haroen.negativeRefinementList';
-  $$widgetType: 'haroen.negativeRefinementList';
   renderState: NegativeRefinementListRenderState;
   indexRenderState: {
     negativeRefinementList: {
@@ -47,24 +41,30 @@ type NegativeRefinementListWidgetDescription = {
  * Connector type, constructed from the Renderer and Connector parameters
  */
 export type NegativeRefinementListConnector = Connector<
-  Omit<NegativeRefinementListWidgetDescription, '$$widgetType'>,
+  NegativeRefinementListWidgetDescription,
   NegativeRefinementListConnectorParams
 >;
 
 /*
  * Renderer type, constructed from the Renderer and Connector parameters
  */
-export type NegativeRefinementListRendererCreator = RendererCreator<
-  NegativeRefinementListRenderState,
-  NegativeRefinementListConnectorParams,
-  NegativeRefinementListWidgetParams
->;
+export type NegativeRefinementListRendererCreator = (
+  widgetParams: NegativeRefinementListWidgetParams
+) => {
+  render: Renderer<
+    NegativeRefinementListWidgetDescription['renderState'],
+    NegativeRefinementListConnectorParams
+  >;
+  dispose: () => void;
+};
 
 /*
  * Widget type, constructed from the Renderer, Connector and Widget parameters
  */
 export type NegativeRefinementListWidgetCreator = WidgetFactory<
-  NegativeRefinementListWidgetDescription,
+  NegativeRefinementListWidgetDescription & {
+    $$widgetType: 'haroen.negativeRefinementList';
+  },
   NegativeRefinementListConnectorParams,
   NegativeRefinementListWidgetParams
 >;

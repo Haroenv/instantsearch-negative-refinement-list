@@ -4565,10 +4565,10 @@ inherits@2.0.3:
   resolved "https://registry.yarnpkg.com/inherits/-/inherits-2.0.3.tgz#633c2c83e3da42a502f52466022480f4208261de"
   integrity sha1-Yzwsg+PaQqUC9SRmAiSA9CCCYd4=
 
-instantsearch.js@4.16.0-experimental-typescript.0:
-  version "4.16.0-experimental-typescript.0"
-  resolved "https://registry.yarnpkg.com/instantsearch.js/-/instantsearch.js-4.16.0-experimental-typescript.0.tgz#937144b628ece41338382cdd20893412a2c6c522"
-  integrity sha512-yeVVAjxUkEzUDKQdn4YP5BGrgkih39ekPP4g/biTMP88fQHwi4TNc6ornPRkh1oizVBlV7O+/ixx9ReYFPHRWw==
+instantsearch.js@4.22.0-experimental-typescript.0:
+  version "4.22.0-experimental-typescript.0"
+  resolved "https://registry.yarnpkg.com/instantsearch.js/-/instantsearch.js-4.22.0-experimental-typescript.0.tgz#5e7bbaf9c27cd040dabc910935ae09ea10b408b4"
+  integrity sha512-Pw1hZLXrQIuGTK6NJRmhTrvIEUFbEzGVOPNmaunEQcK1o9CV4ZxYttPojwnaJb1aY/rzAQEbzTyNqBp7SDQjyg==
   dependencies:
     "@types/googlemaps" "^3.39.6"
     algoliasearch-helper "^3.4.4"

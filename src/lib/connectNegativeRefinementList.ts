@@ -89,7 +89,7 @@ export const connectNegativeRefinementList: NegativeRefinementListConnector = fu
       getWidgetSearchParameters(searchParameters, { uiState }) {
         const state = searchParameters.addFacet(attribute);
 
-        const values = uiState?.negativeRefinementList?.[attribute];
+        const values = uiState.negativeRefinementList?.[attribute];
         if (Array.isArray(values)) {
           return values.reduce<SearchParameters>(
             (acc, curr) => acc.addExcludeRefinement(attribute, curr),
