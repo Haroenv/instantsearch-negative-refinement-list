@@ -53,7 +53,7 @@ The element to insert the widget into.
 This can be either a valid CSS Selector:
 
 ```js
-sampleWidget({
+negativeRefinementList({
   container: '#exclude',
   // ...
 });
@@ -62,8 +62,8 @@ sampleWidget({
 or an `HTMLElement`:
 
 ```js
-sampleWidget({
-  container: document.querySelector('#sample-widget'),
+negativeRefinementList({
+  container: document.querySelector('#negative-refinement-list'),
   // ...
 });
 ```
@@ -77,7 +77,7 @@ required: true
 The name of the attribute to exclude from the results.
 
 ```js
-sampleWidget({
+negativeRefinementList({
   attribute: 'price',
   // ...
 });
@@ -88,7 +88,7 @@ sampleWidget({
 ### Usage
 
 ```js
-import { connectNegativeRefinementList } from 'instantsearch-sample-widget';
+import { connectNegativeRefinementList } from 'instantsearch-negative-refinement-list';
 
 // 1. Create a render function
 const renderNegativeRefinementList = (renderOptions, isFirstRender) => {
@@ -139,7 +139,7 @@ const renderList = (items) => `
 const renderNegativeRefinementList = (renderOptions, isFirstRender) => {
   const { items } = renderOptions;
   const children = renderList(items);
-  document.querySelector('#custom-widget').innerHTML = children;
+  document.querySelector('#negative-refinement-list').innerHTML = children;
 };
 ```
 
@@ -150,7 +150,7 @@ type: object
 All original widget options forwarded to the render function.
 
 ```js
-const renderSampleWidget = (renderOptions, isFirstRender) => {
+const renderNegativeRefinementList = (renderOptions, isFirstRender) => {
   const { widgetParams } = renderOptions;
   widgetParams.container.innerHTML = '...';
 };
@@ -158,8 +158,8 @@ const renderSampleWidget = (renderOptions, isFirstRender) => {
 // ...
 
 search.addWidgets([
-  customSampleWidget({
-    container: document.querySelector('#sample-widget'),
+  customNegativeRefinementList({
+    container: document.querySelector('#negative-refinement-list'),
     // ...
   }),
 ]);
